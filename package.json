@@ -1,0 +1,26 @@
+{
+  "name": "dxctechnology",
+  "version": "1.0.0",
+  "description": "Management App",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Management"
+  ],
+  "author": "Vibhor Goel",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "lodash": "^4.17.4",
+    "morgan": "^1.9.0",
+    "pg": "^6.4.0",
+    "sequelize": "^4.29.2",
+    "sequelize-auto": "^0.4.29",
+    "sequelize-cli": "^3.2.0"
+  }
+}
