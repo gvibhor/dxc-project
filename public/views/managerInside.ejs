@@ -1,0 +1,33 @@
+<html>
+<link href="../assets/styles.css" rel="stylesheet" type="text/css">
+<head>
+</head>
+<title></title>
+<body>
+<h1>Hello Manager <%=email%></h1>
+
+<center><h3>How are you today???</h3></center>
+<div>
+<form id="e_reg" method="POST">
+    <label> Id :</label>
+    <input type="text" id="id"><br>
+    <label> Name :</label>
+    <input type="text" id="name"><br>
+    <label> Email :</label>
+    <input type="email" id="email"><br>
+    <label> Password :</label>
+    <input type="text" id="phone_no"><br>
+    <label> Manager Id :</label>
+    <input type="text" id="manager_id"><br>
+    <label> Write :</label>
+    <input type="checkbox" id="write_access">
+    <label> Read :</label>
+    <input type="checkbox" id="read_access"><br>
+    <button type="button" id="e_reg_submit" value="Submit">Register</button>
+</form>
+</div>
+
+<script src="../bundle.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>

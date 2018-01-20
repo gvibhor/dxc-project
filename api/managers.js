@@ -16,26 +16,27 @@ router.post('/register',function (req, res, next) {
     })
 });
 
-router.post('/login',function (req, res, next) {
+router.post('/login',function (req, res, next)
+{
     let body = _.pick(req.body,'email','password');
+    console.log(body);
     db.tables.Managers.findOne({
         where:{
             email:_.result(body,'email'),
             password:_.result(body,'password')
         }
-    }).then(function (success) {
-        if(success){
-            res.json({
-                Success:'Login successful',
-                Details: success.get('name')
-            });
+    }).then(function (success)
+    {
+         if(success){
+             console.log("Login Successful");
+             res.send("");
         }else {
-            res.status(401).json({Invalid_Details:'Email or password wrong'})
+            console.log("Invalid one");
+            res.status(401).json({Invalid_Details:'Email or password wrong'});
         }
     },function (error) {
         res.json(error);
     })
-
 });
 
 module.exports = router;

@@ -50,7 +50,7 @@ input[type=password], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-input[type=submit] {
+input[type=submit],button {
     width: 80px;
     background-color: #4CAF50;
     color: white;
@@ -81,14 +81,12 @@ input[type=submit]:hover {
     align-content: left;
     align-self: left;
     background-color: #f2f2f2;
-    padding-right: 10px;
+    padding: 10px;
     margin: 20px;
     width: 300px;
     position: absolute;
     left: 0;
     max-width: fit-content;
-
-
 }
 
 #mlogin_form{
@@ -100,11 +98,28 @@ input[type=submit]:hover {
     align-content: left;
     align-self: left;
     background-color: #f2f2f2;
-    padding-right: 10px;
+    padding: 10px;
     margin: 20px;
     width: 300px;
     position: absolute;
     right: 0;
+    max-width: fit-content;
+
+
+}
+#e_reg{
+    /*width:50px;*/
+    /*margin: auto;*/
+    /*border: 3px solid #73AD21;*/
+
+    border-radius: 2px;
+    align-content: center;
+    align-self: center;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 20px;
+    width: 300px;
+    position: absolute;
     max-width: fit-content;
 
 
