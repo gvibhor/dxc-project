@@ -7,12 +7,12 @@
 <h1>Inside Write</h1>
 
 <center><h3>Log In</h3></center>
-    <form id="inside" method="post" action="/insideWrite.ejs">
-        <label> Id :</label>
-        <input type="text" name="id" value=><br>
-        <label> Password :</label>
-        <input type="password" name="password" value=><br>
-        <input type="submit" name="submit1" value="Submit">
+    <form id="file_upload" enctype='multipart/form-data' method="POST">
+        <input type="file" id="file_input">
+        <button type="button" id="btn_file_submit" value="Submit">File Submit</button>
     </form>
+
+<script src="../bundle.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>

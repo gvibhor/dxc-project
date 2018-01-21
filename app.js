@@ -3,8 +3,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const sessions = require("client-sessions");
 const morgan  = require('morgan');
+const path = require('path');
 let app = express();
-let path = require('path');
 app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -17,6 +17,19 @@ app.set('views' ,viewPath);
 app.set('view engine', 'ejs');
 let models = require('./models');
 const settings = require("./settings");
+const multer  = require('multer');
+
+var storage = multer.diskStorage({
+    destination: function(req, file, callback) {
+        callback(null, 'files/')
+    },
+    filename: function(req, file, callback) {
+        console.log(file);
+        callback(null, file.fieldname + '-' + Date.now() + path.extname(file.origingitbsttausalname))
+    }
+});
+
+var upload = multer({ storage:storage });
 
 
 app.use(sessions({
@@ -49,6 +62,15 @@ app.get('/', function (req, res, next) {
 app.get('/index', function (req, res, next) {
     res.render('index');
 });
+
+app.post('/api/files',upload.any(),function (req, res) {
+    // console.log(req.body); // form fields
+    // console.log(req.files); // form files
+    // res.status(204).end()
+    res.json({success:'File uploaded', files:req.files});
+
+});
+
 
 app.get('api/employees/dashboard1',function (req,res,next){
     console.log(res.params.email+" Log in email");

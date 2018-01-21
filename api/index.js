@@ -4,6 +4,7 @@ router.get('/',function (req, res, next) {
 });
 router.use('/managers',require('./managers'));
 router.use('/employees',require('./employees'));
+//router.use('/files',require('./files'));
 
 module.exports = router;
 
