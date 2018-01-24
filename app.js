@@ -18,18 +18,19 @@ app.set('view engine', 'ejs');
 let models = require('./models');
 const settings = require("./settings");
 const multer  = require('multer');
+const fs = require('fs');
 
-var storage = multer.diskStorage({
-    destination: function(req, file, callback) {
-        callback(null, 'files/')
-    },
-    filename: function(req, file, callback) {
-        console.log(file);
-        callback(null, file.fieldname + '-' + Date.now() + path.extname(file.origingitbsttausalname))
-    }
-});
-
-var upload = multer({ storage:storage });
+// var storage = multer.diskStorage({
+//     destination: function(req, file, callback) {
+//         callback(null, 'files/')
+//     },
+//     filename: function(req, file, callback) {
+//         console.log(file);
+//         callback(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+//     }
+// });
+//
+// var upload = multer({ storage:storage });
 
 
 app.use(sessions({
@@ -56,26 +57,26 @@ models.sequelize
 
 
 app.get('/', function (req, res, next) {
-    // res.sendFile('./views/index.html');
-    res.render('index');
+
+    // fs.readdir(__dirname+'/files/', (err, files) => {
+    //     files.forEach(file => {
+    //         console.log(file);
+    //     });
+    // });
+
+ res.render('index');
 });
 app.get('/index', function (req, res, next) {
     res.render('index');
 });
 
-app.post('/api/files',upload.any(),function (req, res) {
-    // console.log(req.body); // form fields
-    // console.log(req.files); // form files
-    // res.status(204).end()
-    res.json({success:'File uploaded', files:req.files});
-
-});
-
-
-app.get('api/employees/dashboard1',function (req,res,next){
-    console.log(res.params.email+" Log in email");
-    res.render('insideWrite',{email:res.params.email});
-});
+// app.post('/api/files',upload.any(),function (req, res) {
+//     // console.log(req.body); // form fields
+//     // console.log(req.files); // form files
+//     // res.status(204).end()
+//     res.json({success:'File uploaded', files:req.files});
+//
+// });
 
 app.get('/dashboard1/:email',function (req,res,next){
     console.log(req.params.email+" Log in email");

@@ -1,16 +1,15 @@
 <html>
 <link href="../assets/styles.css" rel="stylesheet" type="text/css">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <title></title>
 <body>
-<h1>Hello Manager <%=email%></h1>
+<h1>Hello Manager </h1><h1 id="memail"><%=email%></h1>
 
 <center><h3>How are you today???</h3></center>
 <div>
 <form id="e_reg" method="POST">
-    <label> Id :</label>
-    <input type="text" id="id"><br>
     <label> Name :</label>
     <input type="text" id="name"><br>
     <label> Email :</label>
@@ -26,8 +25,13 @@
     <button type="button" id="e_reg_submit" value="Submit">Register</button>
 </form>
 </div>
+<div id="read">
+    <div id="files_list"> </div>
+    <button type="button" id="read_files">Read Files</button>
+</div>
 
 <script src="../bundle.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
