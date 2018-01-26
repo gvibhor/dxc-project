@@ -63,13 +63,10 @@ router.post('/login',function (req, res, next)
     {
         if(success){
             console.log("Employee Lgin Successful");
-             //res.render("insideWrite/",{});
               res.send("Hello");
-            // res.redirect('/dashboard1');
         }else {
             console.log("Invalid one");
             res.status(401).json({Invalid_Details:'Email or password wrong'});
-
         }
     },function (error) {
         res.json(error);

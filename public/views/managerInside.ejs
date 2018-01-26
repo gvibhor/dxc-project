@@ -6,8 +6,12 @@
 <title></title>
 <body>
 <h1>Hello Manager </h1><h1 id="memail"><%=email%></h1>
-
 <center><h3>How are you today???</h3></center>
+<div align="right">
+
+    <button type="button" id="logout">Log Out</button>
+
+</div>
 <div>
 <form id="e_reg" method="POST">
     <label> Name :</label>
@@ -25,7 +29,12 @@
     <button type="button" id="e_reg_submit" value="Submit">Register</button>
 </form>
 </div>
+
 <div id="read">
+    <form id="file_upload" enctype='multipart/form-data' method="POST">
+        <input type="file" id="file_input">
+        <button type="button" id="btn_file_submitm" value="Submit">File Upload</button>
+    </form>
     <div id="files_list"> </div>
     <button type="button" id="read_files">Read Files</button>
 </div>

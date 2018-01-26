@@ -1,18 +1,25 @@
 <html>
 <link href="../assets/styles.css" rel="stylesheet" type="text/css">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <title></title>
 <body>
 <h1>Inside Write</h1>
 
 <center><h3>Log In</h3><h1 id="email"><%=email%></h1></center>
+<div align="right">
+    <button type="button" id="logout">Log Out</button>
+</div>
+<div id="read">
     <form id="file_upload" enctype='multipart/form-data' method="POST">
         <input type="file" id="file_input">
         <button type="button" id="btn_file_submit" value="Submit">File Submit</button>
     </form>
+</div>
 
 <script src="../bundle.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

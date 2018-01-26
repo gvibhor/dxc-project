@@ -29,9 +29,10 @@ router.post('/login',function (req, res, next)
     {
          if(success){
              console.log("Login Successful");
-             res.send("");
+             res.send("success");
         }else {
             console.log("Invalid one");
+            // res.send("error");
             res.status(401).json({Invalid_Details:'Email or password wrong'});
         }
     },function (error) {
